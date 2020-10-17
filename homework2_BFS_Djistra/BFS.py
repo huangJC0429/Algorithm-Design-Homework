@@ -149,19 +149,35 @@ Chengdu_Subway_Line = {
 
 }
 
-def BFS(graph , s):#graph图  s指的是开始结点
+def BFS(graph , s, end):  # graph图  s指的是开始结点,end是结束节点
     queue = []
+    parents = {}
     queue.append(s)
     visited = set()
     visited.add(s)
     while len(queue) > 0:
-        vertex = queue.pop(0)
-        nodes = graph[vertex]#子节点的数组
+        vertex = queue.pop(0)  # pop移除列表中的一个元素
+        if vertex == end:
+            print("已找到目标节点！")
+            return parents
+        nodes = graph[vertex]  # 子节点的数组
         for w in nodes:
-            if w not in visited:#判断是否访问过，使用一个数组
+            if w not in visited:  # 判断是否访问过，使用一个数组
                 queue.append(w)
                 visited.add(w)
+                parents[w] = vertex  # 追溯父节点
         print(vertex)
 
+def find_way(parents, start, end):
+    trace = []
+    trace.append(end)
+    while(parents[end] != start):
+        end = parents[end]
+        trace.append(parents[end])
+    trace.reverse()
+    return trace
+
 if __name__ == '__main__':
-    BFS(Chengdu_Subway_Line, "西南石油大学")
+    parents = BFS(Chengdu_Subway_Line, "西南石油大学", "天府三街")
+    trace = find_way(parents, "西南石油大学", "天府三街")
+    print("最短路径已找到:", trace)
