@@ -171,11 +171,12 @@ def BFS(graph , s, end):  # graph图  s指的是开始结点,end是结束节点
 def find_way(parents, start, end):
     trace = []
     trace.append(end)
-    while(parents[end] != start):
+    while parents[end] != start:
         end = parents[end]
         trace.append(parents[end])
     trace.reverse()
     return trace
+
 
 if __name__ == '__main__':
     parents = BFS(Chengdu_Subway_Line, "西南石油大学", "天府三街")

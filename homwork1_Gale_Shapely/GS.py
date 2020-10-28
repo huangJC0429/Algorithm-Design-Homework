@@ -27,7 +27,7 @@ def man_is_full_proposed(m, num):
 if __name__ == "__main__":
 
     '''先来个3男3女, 随机赋值心愿列表'''
-    number_pair = 10
+    number_pair = 20
     m = {}
     w = {}
     for i in range(number_pair):
@@ -73,7 +73,8 @@ if __name__ == "__main__":
             m[str(ind)].is_free = False
             w[str(m[str(ind)].love_list[m[str(ind)].top])].is_free = False
             w[str(m[str(ind)].love_list[m[str(ind)].top])].pair_man = ind
-        elif w[str(m[str(ind)].love_list[m[str(ind)].top])].love_list.index(w[str(m[str(ind)].love_list[m[str(ind)].top])].pair_man) > w[str(m[str(ind)].love_list[m[str(ind)].top])].love_list.index(ind):
+        elif w[str(m[str(ind)].love_list[m[str(ind)].top])].love_list.index(w[str(m[str(ind)].love_list[m[str(ind)]
+                .top])].pair_man) > w[str(m[str(ind)].love_list[m[str(ind)].top])].love_list.index(ind):
             m[str(w[str(m[str(ind)].love_list[m[str(ind)].top])].pair_man)].is_free = True
             w[str(m[str(ind)].love_list[m[str(ind)].top])].pair_man = ind
             m[str(ind)].is_free = False
