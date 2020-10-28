@@ -3,13 +3,6 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 Inf = float('inf')
-G = np.array([[0, 1, 12, Inf, Inf, Inf],
-              [Inf, 0, 9, 3, Inf, Inf],
-              [Inf, Inf, 0, Inf, 5, Inf],
-              [Inf, Inf, 4, 0, 13, 15],
-              [Inf, Inf, Inf, Inf, 0, 4],
-              [Inf, Inf, Inf, Inf, Inf, 0]])
-
 
 def Dijkstra(G, source):
     Q = []
@@ -40,6 +33,7 @@ def Dijkstra(G, source):
 
 if __name__ == '__main__':
 
+    # 索引用来查找哪个点对于哪个地铁站
     L = ["犀浦", "韦家碾", "石油大学", "一品天下", "火车北站", "驷马桥", "万盛",
          "文化宫", "中医大省医院", "骡马市", "市二医院", "槐树店", "西河", "天府广场",
          "春熙路", "省体育馆", "成都东客站", "太平园", "火车南站", "龙泉驿", "双流西站",
