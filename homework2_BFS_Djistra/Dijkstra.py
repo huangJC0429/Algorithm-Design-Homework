@@ -85,3 +85,13 @@ if __name__ == '__main__':
     for x in range(len(dist)):
         print("从石油大学到", L[x], "最短的路径是", dist[x],"站")
     # print(prev)
+    print("--------------以下是溯源，从西南石油大学到天府三街的具体最短路径为----------------")
+    # 以下代码是溯源，从西南石油大学到天府三街的具体最短路径
+    root = []
+    end = 22
+    while end != -1:
+        root.append(end)
+        end = prev[end]
+    root.reverse()
+    for a in root:
+        print(L[a])
