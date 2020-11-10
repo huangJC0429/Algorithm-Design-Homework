@@ -13,4 +13,4 @@ if __name__ == '__main__':
                 M[i, w] = M[i - 1, w]
             else:
                 M[i, w] = max(M[i - 1, w], Items[i - 1][1] + M[i - 1, w - wi])
-    print(M[5, 11])
+    print("背包最大Value为:", M[5, 11])
