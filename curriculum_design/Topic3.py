@@ -1,5 +1,4 @@
 
-
 numBottles = int(input())
 numExchange = int(input())
 
@@ -13,7 +12,7 @@ while surplus != 0:
 
     numBottles = surplus
     if empty_Bottle >= numExchange:
-        surplus = 1
-        numBottles += empty_Bottle // numExchange
+        surplus += empty_Bottle // numExchange
+        numBottles = surplus
         empty_Bottle = empty_Bottle % numExchange
-print(count)
+print("最多能喝", count, "瓶酒")
